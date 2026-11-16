@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #111827;
+  background-color: #f8fafc;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.375rem;
+}
+
+a {
+  color: #0b4f8a;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #062f54
+}
+
+@media (min-width: 40em) {
+  /* TODO */
+}
+
+@media (min-width: 60em) {
+  /* TODO */
+}
+
+@media (min-width: 80em) {
+  /* TODO */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* TODO */
+  }
+}
+
+@media (prefers-contrast: more) {
+  /* TODO */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* TODO */
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  /* TODO */
+}
+
+@media (forced-colors: active) {
+  /* TODO */
+}
