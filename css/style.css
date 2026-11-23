@@ -33,6 +33,31 @@ a:hover {
   color: #062f54
 }
 
+:root {
+    color-scheme: light;
+
+    --bg-color: #ffffff;
+    --text-color: #222222;
+    --surface-color: #f2f2f2;
+    --border-color: #cccccc;
+    --link-color: #0056b3;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+input, textarea, select, button {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
 @media (min-width: 40em) {
   /* TODO */
 }
@@ -47,7 +72,13 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* TODO */
+    color-scheme: dark;
+
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --surface-color: #242424;
+    --border-color: #555555;
+    --link-color: #80bfff;
   }
 }
 
