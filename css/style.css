@@ -1,10 +1,23 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: bordex-box;
+  min-width: none;
+}
+
+:root {
+    color-scheme: light;
+
+    --bg-color: #ffffff;
+    --text-color: #222222;
+    --surface-color: #f2f2f2;
+    --border-color: #cccccc;
+    --link-color: #0056b3;
 }
 
 body {
@@ -12,9 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #111827;
-  background-color: #f8fafc;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   overflow-wrap: break-word;
+  padding: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 img {
@@ -25,7 +41,7 @@ img {
 }
 
 a {
-  color: #0b4f8a;
+  color: var(--link-color);
   text-underline-offset: 0.2em;
 }
 
@@ -33,21 +49,116 @@ a:hover {
   color: #062f54
 }
 
+input, textarea, select, button {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+nav a {
+    display: block;
+    padding: 0.75rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
+}
+
 @media (min-width: 40em) {
-  /* TODO */
+  body {
+        padding: 1.5rem;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main > * {
+        flex: 1 1 45%;
+        min-width: 0;
+    }
 }
 
 @media (min-width: 60em) {
-  /* TODO */
+  body {
+        padding: 2rem;
+    }
+
+    .container {
+        max-width: 60rem;
+    }
+
+    nav {
+        justify-content: flex-start;
+    }
+
+    main {
+        flex-wrap: nowrap;
+    }
+
+    main > * {
+        flex: 1;
+    }
 }
 
 @media (min-width: 80em) {
-  /* TODO */
+  body {
+        padding: 2.5rem;
+    }
+
+    .container {
+        max-width: 75rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+
+    main {
+        gap: 2rem;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* TODO */
+    color-scheme: dark;
+
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --surface-color: #242424;
+    --border-color: #555555;
+    --link-color: #80bfff;
   }
 }
 
