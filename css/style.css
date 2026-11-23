@@ -43,10 +43,13 @@ img {
 a {
   color: var(--link-color);
   text-underline-offset: 0.2em;
+  text-decoration: underline;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 a:hover {
-  color: #062f54
+  color: #ffffff;
+  background-color: #0056b3;
 }
 
 input, textarea, select, button {
@@ -86,6 +89,28 @@ table {
   max-width: 100%;
   display: block;
   overflow-x: auto;
+}
+
+.card {
+    animation: fadeIn 0.5s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (min-width: 40em) {
@@ -207,7 +232,27 @@ table {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* TODO */
+   *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .card, .card:hover {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none;
+  }
+
+  a, a:hover {
+    transition: none !important;
+  }
 }
 
 @media (prefers-reduced-transparency: reduce) {
